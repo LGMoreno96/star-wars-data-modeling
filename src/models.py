@@ -13,44 +13,44 @@ class item(Base):
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), nullable=False)
-    url= Column(String(250), nullable=False)
+    name = Column(String(256), nullable=False)
+    url= Column(String(256), nullable=False)
 
 class Character(item):
     __tablename__ = 'character'
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
-    birth_year = Column(String(250))
-    eye_color = Column(String(250))
-    gender = Column(String(250))
+    birth_year = Column(String(256))
+    eye_color = Column(String(256))
+    gender = Column(String(256))
     height = Column(Integer)
     mass = Column(Integer)
-    starship = Column(String(250))
-    vehicles = Column(String(250))
+    starship = Column(String(256))
+    vehicles = Column(String(256))
     children1=relationship("Favorite",back_populates="parent1")
 
 class Planet(item):
     __tablename__= 'planet'
-    diameter=Column(String(250))
-    rotation_period=Column(String(250))
-    orbital_period=Column(String(250))
-    gravity=Column(String(250))
-    population=Column(String(250))
-    climate=Column(String(250))
-    residents=Column(String(250))
-    terrain=Column(String(250))
+    diameter=Column(String(256))
+    rotation_period=Column(String(256))
+    orbital_period=Column(String(256))
+    gravity=Column(String(256))
+    population=Column(String(256))
+    climate=Column(String(256))
+    residents=Column(String(256))
+    terrain=Column(String(256))
     children2=relationship("Favorite",back_populates="parent2")
 
 class Vehicle(item):
     __tablename__='vehicle'
-    vehicle_class=Column(String(250))
-    manufacturer=Column(String(250))
-    length=Column(String(250))
-    cost_in_credits=Column(String(250))
-    crew=Column(String(250))
-    passengers=Column(String(250))
-    cargo_capacity=Column(String(250))
-    consumable=Column(String(250))
+    vehicle_class=Column(String(256))
+    manufacturer=Column(String(256))
+    length=Column(String(256))
+    cost_in_credits=Column(String(256))
+    crew=Column(String(256))
+    passengers=Column(String(256))
+    cargo_capacity=Column(String(256))
+    consumable=Column(String(256))
     children3=relationship("Favorite",back_populates="parent3")
 
 class Favorite(Base):
@@ -67,7 +67,7 @@ class Favorite(Base):
 class User(Base):
     __tablename__='user'
     id_user=Column(Integer, primary_key=True)
-    password=Column(String(250))
+    password=Column(String(256))
 
     def to_dict(self):
         return {}
